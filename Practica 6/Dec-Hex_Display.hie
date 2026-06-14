@@ -1,0 +1,2 @@
+BCD-Hex_Display.vhd #Entity dec 4
+BCD-Hex_Display.vhd #Architecture a_dec dec 11

@@ -1,0 +1,308 @@
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp VHDL Synthesis Compiler: Version 6.3 IR 35
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  Binario_Gray.vhd
+Options:    -m -yu -e10 -w100 -o2 -ygs -fP -v10 -dc22v10 -ppalce22v10-25pc/pi -b Binario_Gray.vhd -u Binario_Gray.hie
+======================================================================
+
+vhdlfe V6.3 IR 35:  VHDL parser
+Mon Nov 27 23:56:32 2023
+
+Library 'work' => directory 'lc22v10'
+Linking 'C:\Archivos de programa\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\work\cypress.vif'.
+Library 'ieee' => directory 'C:\Archivos de programa\Cypress\Warp\lib\ieee\work'
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+
+vhdlfe:  No errors.
+
+
+tovif V6.3 IR 35:  High-level synthesis
+Mon Nov 27 23:56:33 2023
+
+Linking 'C:\Archivos de programa\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+
+tovif:  No errors.
+
+
+topld V6.3 IR 35:  Synthesis and optimization
+Mon Nov 27 23:56:34 2023
+
+Linking 'C:\Archivos de programa\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Archivos de programa\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+
+
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+
+------------------------------------------------------
+Aliased 0 equations, 0 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 3 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 10.
+----------------------------------------------------------
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+
+------------------------------------------------------
+Aliased 0 equations, 0 wires.
+------------------------------------------------------
+Created 13 PLD nodes.
+
+topld:  No errors.
+
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+DESIGN HEADER INFORMATION  (23:56:35)
+
+Input File(s): Binario_Gray.pla
+Device       : C22V10
+Package      : palce22v10-25pc/pi
+ReportFile   : Binario_Gray.rpt
+
+Program Controls:
+    COMMAND LANGUAGE_VHDL 
+    COMMAND PROPERTY BUS_HOLD ENABLE 
+
+Signal Requests:
+    GROUP USEPOL ALL
+    GROUP FAST_SLEW ALL
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+OPTIMIZATION OPTIONS       (23:56:35)
+
+Messages:
+  Information: Process virtual 'aux_0' ... converted to NODE.
+  Information: Process virtual 'aux_1' ... converted to NODE.
+  Information: Process virtual 'aux_2' ... converted to NODE.
+  Information: Process virtual 'aux_3' ... converted to NODE.
+  Information: Optimizing logic using best output polarity for signals:
+         aux_0 aux_1 aux_2 g(0) g(1) g(2) g(3)
+
+  Information: Selected logic optimization OFF for signals:
+         aux_3
+
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Optimizer Software:       MINOPT.EXE     01/NOV/1999  [v4.02 ] 6.3 IR 35
+
+LOGIC MINIMIZATION         ()
+
+Messages:
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+OPTIMIZATION OPTIONS       (23:56:35)
+
+Messages:
+  Information: Optimizing Banked Preset/Reset requirements.
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Equations" icon=FILE_RPT_EQUATION>
+DESIGN EQUATIONS           (23:56:36)
+</CYPRESSTAG>
+
+    aux_0 =
+          aux_0 * sel 
+        + b(1) * /sel 
+
+    aux_1 =
+          aux_1 * sel 
+        + b(2) * /sel 
+
+    aux_2 =
+          aux_2 * sel 
+        + b(3) * /sel 
+
+    aux_3 =
+          aux_3 * sel 
+
+    g(0) =
+          /b(0) * b(1) * b(2) * b(3) * sel 
+        + b(0) * /b(1) * b(2) * b(3) * sel 
+        + b(0) * b(1) * /b(2) * b(3) * sel 
+        + /b(0) * /b(1) * /b(2) * b(3) * sel 
+        + b(0) * b(1) * b(2) * /b(3) * sel 
+        + /b(0) * /b(1) * b(2) * /b(3) * sel 
+        + /b(0) * b(1) * /b(2) * /b(3) * sel 
+        + b(0) * /b(1) * /b(2) * /b(3) * sel 
+        + /aux_0 * b(0) * /sel 
+        + aux_0 * /b(0) * /sel 
+
+    g(1) =
+          b(1) * b(2) * b(3) * sel 
+        + /b(1) * /b(2) * b(3) * sel 
+        + /b(1) * b(2) * /b(3) * sel 
+        + b(1) * /b(2) * /b(3) * sel 
+        + /aux_1 * b(1) * /sel 
+        + aux_1 * /b(1) * /sel 
+
+    g(2) =
+          /b(2) * b(3) * sel 
+        + b(2) * /b(3) * sel 
+        + /aux_2 * b(2) * /sel 
+        + aux_2 * /b(2) * /sel 
+
+    g(3) =
+          aux_3 * /b(3) * /sel 
+        + b(3) * sel 
+        + /aux_3 * b(3) 
+
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+DESIGN RULE CHECK          (23:56:36)
+
+Messages:
+                 None.
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Pinout" icon=FILE_RPT_PINOUT>
+PINOUT INFORMATION   (23:56:36)
+</CYPRESSTAG>
+Messages:
+  Information: Checking for duplicate NODE logic.
+                 None.
+
+
+                                 C22V10
+                 __________________________________________
+            sel =| 1|                                  |24|* not used       
+           b(3) =| 2|                                  |23|= g(2)           
+           b(2) =| 3|                                  |22|= g(3)           
+           b(1) =| 4|                                  |21|= (aux_1)        
+           b(0) =| 5|                                  |20|= (aux_3)        
+       not used *| 6|                                  |19|* not used       
+       not used *| 7|                                  |18|* not used       
+       not used *| 8|                                  |17|= (aux_0)        
+       not used *| 9|                                  |16|= (aux_2)        
+       not used *|10|                                  |15|= g(0)           
+       not used *|11|                                  |14|= g(1)           
+       not used *|12|                                  |13|* not used       
+                 __________________________________________
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Utilization" icon=FILE_RPT_UTILIZATION>
+RESOURCE UTILIZATION (23:56:36)
+</CYPRESSTAG>
+  Information: Macrocell Utilization.
+
+                     Description        Used     Max
+                 ______________________________________
+                 | Dedicated Inputs   |    4  |   11  |
+                 | Clock/Inputs       |    1  |    1  |
+                 | I/O Macrocells     |    8  |   10  |
+                 ______________________________________
+                                          13  /   22   = 59  %
+
+
+  Information: Output Logic Product Term Utilization.
+
+                  Node#  Output Signal Name  Used   Max
+                 ________________________________________
+                 | 14  |  g(1)            |   6  |   8  |
+                 | 15  |  g(0)            |  10  |  10  |
+                 | 16  |  aux_2           |   2  |  12  |
+                 | 17  |  aux_0           |   2  |  14  |
+                 | 18  |  Unused          |   0  |  16  |
+                 | 19  |  Unused          |   0  |  16  |
+                 | 20  |  aux_3           |   1  |  14  |
+                 | 21  |  aux_1           |   2  |  12  |
+                 | 22  |  g(3)            |   3  |  10  |
+                 | 23  |  g(2)            |   4  |   8  |
+                 | 25  |  Unused          |   0  |   1  |
+                 ________________________________________
+                                             30  / 121   = 24  %
+
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+JEDEC ASSEMBLE             (23:56:36)
+
+Messages:
+  Information: Output file 'Binario_Gray.pin' created.
+  Information: Output file 'Binario_Gray.jed' created.
+
+  Usercode:    
+  Checksum:    CD81
+
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully at 23:56:36

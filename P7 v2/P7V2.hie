@@ -1,0 +1,2 @@
+P7V2.vhd #Entity p7 4
+P7V2.vhd #Architecture a_p7 p7 12

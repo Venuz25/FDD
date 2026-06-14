@@ -1,0 +1,2 @@
+Binario_Gray.vhd #Entity bg 4
+Binario_Gray.vhd #Architecture a_bg bg 11

@@ -1,0 +1,2 @@
+Multiplex.vhd #Entity mux 3
+Multiplex.vhd #Architecture a_mux mux 10

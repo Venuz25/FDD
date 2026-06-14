@@ -1,0 +1,7 @@
+ENTITY bg IS
+    PORT (
+	b : in std_logic_vector (3 downto 0) ; 
+	sel : in std_logic  ; 
+	g : inout std_logic_vector (3 downto 0)
+    ) ;
+END bg ;
