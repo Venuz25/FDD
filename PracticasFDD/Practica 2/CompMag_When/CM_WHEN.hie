@@ -1,0 +1,2 @@
+CM_WHEN.vhd #Entity cm 4
+CM_WHEN.vhd #Architecture a_cm cm 10

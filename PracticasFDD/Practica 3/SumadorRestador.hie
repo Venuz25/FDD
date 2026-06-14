@@ -1,0 +1,2 @@
+SumadorRestador.vhd #Entity sr 4
+SumadorRestador.vhd #Architecture a_sr sr 13

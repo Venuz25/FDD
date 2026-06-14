@@ -1,0 +1,130 @@
+CREATE DATABASE CBB;
+
+USE CBB;
+
+CREATE TABLE Cervezas (
+  Marca Varchar(30) NOT NULL PRIMARY KEY,
+  Color Varchar(20),
+  Tamanio INT,
+  Precio FLOAT,
+  Cia Varchar(20),
+  gGL FLOAT
+) ENGINE=InnoDB;
+
+CREATE TABLE Bares (
+  NomBar Varchar(30) NOT NULL PRIMARY KEY,
+  Zona Varchar(20),
+  TipoBar Varchar(20)
+) ENGINE=InnoDB;
+
+CREATE TABLE Borrachos (
+  NomBorr Varchar(30) NOT NULL PRIMARY KEY,
+  Edad INT,
+  TipoBorr Varchar(20),
+  Profesion Varchar(10),
+  Sexo Varchar(2)
+) ENGINE=InnoDB;
+
+CREATE TABLE Asisten (
+  NomBorr Varchar(30) NOT NULL,
+  NomBar Varchar(30) NOT NULL,
+  PRIMARY KEY (NomBorr, NomBar),
+  FOREIGN KEY (NomBorr) REFERENCES Borrachos (NomBorr),
+  FOREIGN KEY (NomBar) REFERENCES Bares (NomBar)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE Consumen (
+  Marca Varchar(30) NOT NULL,
+  NomBorr Varchar(30) NOT NULL,
+  PRIMARY KEY (Marca, NomBorr),
+  FOREIGN KEY (Marca) REFERENCES Cervezas (Marca),
+  FOREIGN KEY (NomBorr) REFERENCES Borrachos (NomBorr)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+cREATE TABLE Venden (
+  Marca Varchar(30) NOT NULL,
+  NomBar Varchar(30) NOT NULL,
+  PRIMARY KEY (Marca, NomBar),
+  FOREIGN KEY (Marca) REFERENCES Cervezas (Marca),
+  FOREIGN KEY (NomBar) REFERENCES Bares (NomBar)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+INSERT INTO Cervezas VALUES ("Tecate","Clara",355,12,"Cuahtemoc",4.5);
+INSERT INTO Cervezas VALUES ("Tecate Titanium","Clara",355,15,"Cuahtemoc",5.5);
+INSERT INTO Cervezas VALUES ("Tecate Light","Dorado",500,17,"Cuahtemoc",4);
+INSERT INTO Cervezas VALUES ("Superior","Clara",355,15,"Cuahtemoc",4.5);
+INSERT INTO Cervezas VALUES ("Sol Cero","Clara",355,12,"Cuahtemoc",0.5);
+INSERT INTO Cervezas VALUES ("Sol Rojo","Rojo",355,17,"Cuahtemoc",2.5);
+INSERT INTO Cervezas VALUES ("Corona Extra","Rojo",300,12,"Modelo",5.5);
+INSERT INTO Cervezas VALUES ("Negra Modelo","Oscura",500,18,"Modelo",6);
+INSERT INTO Cervezas VALUES ("Montejo","Dorado",1000,15,"Modelo",4);
+INSERT INTO Cervezas VALUES ("Victoria","Oscura",350,20,"Modelo",5);
+INSERT INTO Cervezas VALUES ("Bud Light","Dorado",450,25,"Modelo",5);
+
+INSERT INTO Bares VALUES ("La Mancha","Lindavista","Familiar");
+INSERT INTO Bares VALUES ("El recuerdo","Rosa","Familiar");
+INSERT INTO Bares VALUES ("Olvido","Roma","Familiar");
+
+INSERT INTO Borrachos VALUES ("Odera",21,"Nostalgico","ISC","M");
+INSERT INTO Borrachos VALUES ("Ubaldo",19,"Mala copa","ISC","H");
+INSERT INTO Borrachos VALUES ("Carola",23,"Alegre","ISC","M");
+INSERT INTO Borrachos VALUES ("Diego",18,"Dormilon","CP","H");
+INSERT INTO Borrachos VALUES ("Sadoc",27,"Dormilon","ARQ","H");
+INSERT INTO Borrachos VALUES ("Safira",24,"Mala copa","ARQ","M");
+
+INSERT INTO Venden VALUES ("Tecate","La Mancha");
+INSERT INTO Venden VALUES ("Tecate Titanium","La Mancha");
+INSERT INTO Venden VALUES ("Tecate Light","La Mancha");
+INSERT INTO Venden VALUES ("Superior","La Mancha");
+INSERT INTO Venden VALUES ("Sol Cero","La Mancha");
+INSERT INTO Venden VALUES ("Sol Rojo","La Mancha");
+INSERT INTO Venden VALUES ("Superior","El recuerdo");
+INSERT INTO Venden VALUES ("Sol Cero","El recuerdo");
+INSERT INTO Venden VALUES ("Sol Rojo","El recuerdo");
+INSERT INTO Venden VALUES ("Corona Extra","Olvido");
+INSERT INTO Venden VALUES ("Negra Modelo","Olvido");
+INSERT INTO Venden VALUES ("Montejo","Olvido");
+INSERT INTO Venden VALUES ("Victoria","Olvido");
+INSERT INTO Venden VALUES ("Bud Light","Olvido");
+INSERT INTO Venden VALUES ("Montejo","La Mancha");
+
+INSERT INTO Asisten VALUES ("Odera","La Mancha");
+INSERT INTO Asisten VALUES ("Odera","El Recuerdo");
+INSERT INTO Asisten VALUES ("Ubaldo","La Mancha");
+INSERT INTO Asisten VALUES ("Ubaldo","Olvido");
+INSERT INTO Asisten VALUES ("Carola","Olvido");
+INSERT INTO Asisten VALUES ("Carola","La Mancha");
+INSERT INTO Asisten VALUES ("Diego","Olvido");
+INSERT INTO Asisten VALUES ("Diego","La Mancha");
+INSERT INTO Asisten VALUES ("Sadoc","Olvido");
+INSERT INTO Asisten VALUES ("Sadoc","El Recuerdo");
+INSERT INTO Asisten VALUES ("Sadoc","La Mancha");
+INSERT INTO Asisten VALUES ("Safira","Olvido");
+INSERT INTO Asisten VALUES ("Safira","La Mancha");
+
+INSERT INTO Consumen VALUES("Tecate","Odera");
+INSERT INTO Consumen VALUES("Tecate Titanium","Odera");
+INSERT INTO Consumen VALUES("Tecate Light","Odera");
+INSERT INTO Consumen VALUES("Superior","Odera");
+INSERT INTO Consumen VALUES("Sol Cero","Odera");
+INSERT INTO Consumen VALUES("Sol Rojo","Odera");
+INSERT INTO Consumen VALUES("Superior","Ubaldo");
+INSERT INTO Consumen VALUES("Victoria","Ubaldo");
+INSERT INTO Consumen VALUES("Montejo","Carola");
+INSERT INTO Consumen VALUES("Corona Extra","Carola");
+INSERT INTO Consumen VALUES("Corona Extra","Diego");
+INSERT INTO Consumen VALUES("Negra Modelo","Diego");
+INSERT INTO Consumen VALUES("Montejo","Diego");
+INSERT INTO Consumen VALUES("Victoria","Diego");
+INSERT INTO Consumen VALUES("Bud Light","Diego");
+INSERT INTO Consumen VALUES("Bud Light","Sadoc");
+INSERT INTO Consumen VALUES("Sol Rojo","Sadoc");
+INSERT INTO Consumen VALUES("Negra Modelo","Safira");
+INSERT INTO Consumen VALUES("Tecate","Safira");
+

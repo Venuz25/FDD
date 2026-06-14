@@ -1,0 +1,9 @@
+ENTITY sr IS
+    PORT (
+	a : in std_logic_vector (3 downto 0) ; 
+	b : in std_logic_vector (3 downto 0) ; 
+	c : in std_logic  ; 
+	sr : inout std_logic_vector (3 downto 0) ; 
+	cf : inout std_logic 
+    ) ;
+END sr ;

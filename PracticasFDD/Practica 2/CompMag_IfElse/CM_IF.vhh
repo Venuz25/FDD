@@ -1,0 +1,9 @@
+ENTITY cm IS
+    PORT (
+	a : in std_logic_vector (3 downto 0) ; 
+	b : in std_logic_vector (3 downto 0) ; 
+	i : inout std_logic  ; 
+	ma : inout std_logic  ; 
+	me : inout std_logic 
+    ) ;
+END cm ;
